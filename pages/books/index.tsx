@@ -1,7 +1,4 @@
-interface Book {
-  id: number
-  name: string
-}
+import { Book } from '@types'
 
 interface Books {
   books: Book[]
@@ -25,7 +22,6 @@ export async function getStaticProps() {
     },
   })
   const books = await res.json()
-  console.log('books', books)
 
   return {
     props: {
