@@ -1,4 +1,10 @@
-import { FormEvent } from 'react'
+import {
+  ChangeEvent,
+  ChangeEventHandler,
+  FormEvent,
+  FormEventHandler,
+  useState,
+} from 'react'
 import styled from 'styled-components'
 
 interface FormTarget {
@@ -12,25 +18,33 @@ const Form = styled.form<any>`
 `
 
 function Register() {
-  async function registerUser(event: FormEvent<FormTarget>) {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  function handleOnChangeEmail(event: ChangeEvent<HTMLInputElement>) {
+    setEmail(event.currentTarget.value)
+  }
+
+  function handleOnChangePassword(event: ChangeEvent<HTMLInputElement>) {
+    setPassword(event.currentTarget.value)
+  }
+
+  async function registerUser(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    console.log('registering user')
 
-    // const res = await fetch('localhost:3000/users', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({
-    //     user: {
-    //       email: event.currentTarget.email,
-    //       password: event.currentTarget.password,
-    //     },
-    //   }),
-    // })
-
-    // const result = await res.json()
-    // console.log('result', result)
+    const res = await fetch('http://localhost:4000/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        user: {
+          email,
+          password,
+        },
+      }),
+    })
+    await res.json()
   }
 
   return (
@@ -38,10 +52,22 @@ function Register() {
       <h1>Register</h1>
       <Form onSubmit={registerUser}>
         <label htmlFor="email">Email</label>
-        <input id="email" type="text" autoComplete="email" required />
+        <input
+          id="email"
+          type="text"
+          autoComplete="email"
+          onChange={handleOnChangeEmail}
+          required
+        />
 
         <label htmlFor="password">Password</label>
-        <input id="password" type="text" autoComplete="password" required />
+        <input
+          id="password"
+          type="text"
+          autoComplete="password"
+          onChange={handleOnChangePassword}
+          required
+        />
 
         <button type="submit">Register</button>
       </Form>
