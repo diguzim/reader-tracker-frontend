@@ -14,6 +14,9 @@ const StyledMobileNavigationMenu = styled.nav`
 const StyledDesktopNavigationMenu = styled.nav`
   display: flex;
   flex-direction: row;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  align-items: center;
+  justify-content: flex-start;
 `
 
 export function NavigationMenu(props: NavigationMenuProps) {
