@@ -11,8 +11,10 @@ export default {
   component: NavigationMenu,
 } as Meta
 
+const children = [<p>First Item</p>, <p>Second Item</p>, <p>Third Item</p>]
+
 const Template: Story<NavigationMenuProps> = (args) => (
-  <NavigationMenu {...args} />
+  <NavigationMenu {...args}>{children}</NavigationMenu>
 )
 
 export const Mobile = Template.bind({})

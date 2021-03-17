@@ -8,7 +8,12 @@ export interface NavigationMenuProps {
 
 const StyledMobileNavigationMenu = styled.nav`
   display: flex;
-  flex-direction: 'column';
+  flex-direction: column;
+`
+
+const StyledDesktopNavigationMenu = styled.nav`
+  display: flex;
+  flex-direction: row;
 `
 
 export function NavigationMenu(props: NavigationMenuProps) {
@@ -19,5 +24,5 @@ export function NavigationMenu(props: NavigationMenuProps) {
     return <StyledMobileNavigationMenu>{children}</StyledMobileNavigationMenu>
   }
 
-  return <p>Desktop to be implemented</p>
+  return <StyledDesktopNavigationMenu>{children}</StyledDesktopNavigationMenu>
 }
