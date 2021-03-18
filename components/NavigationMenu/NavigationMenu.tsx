@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { ReactNode, useState } from 'react'
 import useWindowDimensions from '../../hooks/useWindowDimensions'
 import styled from 'styled-components'
 
@@ -9,6 +9,9 @@ export interface NavigationMenuProps {
 const StyledMobileNavigationMenu = styled.nav`
   display: flex;
   flex-direction: column;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100px;
 `
 
 const StyledDesktopNavigationMenu = styled.nav`
@@ -22,9 +25,19 @@ const StyledDesktopNavigationMenu = styled.nav`
 export function NavigationMenu(props: NavigationMenuProps) {
   const { children } = props
   const { width } = useWindowDimensions()
+  const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
 
+  function toggleMobileMenuVisibility() {
+    setMobileMenuVisible(previousVisibility => !previousVisibility);
+  }
+  
   if (width < 720) {
-    return <StyledMobileNavigationMenu>{children}</StyledMobileNavigationMenu>
+    return (
+      <>
+        <button onClick={toggleMobileMenuVisibility}>Activate</button>
+        {mobileMenuVisible && <StyledMobileNavigationMenu>{children}</StyledMobileNavigationMenu>}
+      </>
+    )
   }
 
   return <StyledDesktopNavigationMenu>{children}</StyledDesktopNavigationMenu>
