@@ -1,16 +1,19 @@
-import { NavigationAnchor, NavigationMenu } from 'components'
 import Link from 'next/link'
 
+import { NavigationAnchor, NavigationLink, NavigationMenu } from 'components'
+
 export function MainNavigation() {
-  return <NavigationMenu>
-    <Link href="/">
-      <NavigationAnchor>Inicio</NavigationAnchor>
-    </Link>
-    <Link href="/books">
-      <NavigationAnchor>Livros</NavigationAnchor>
-    </Link>
-    <Link href="/readings">
-      <NavigationAnchor>Leituras</NavigationAnchor>
-    </Link>
-  </NavigationMenu>
+  return (
+    <NavigationMenu>
+      <NavigationLink href="/">
+        Inicio
+      </NavigationLink>
+      <NavigationLink href="/books">
+        Livros
+      </NavigationLink>
+      <NavigationLink href="/readings">
+        Leituras
+      </NavigationLink>
+    </NavigationMenu>
+  )
 }
