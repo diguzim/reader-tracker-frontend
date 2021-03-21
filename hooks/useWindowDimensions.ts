@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 import { smallBreakpoint, mediumBreakpoint, bigBreakpoint } from "common";
 
@@ -21,7 +21,7 @@ function getWindowDimensions() {
 export default function useWindowDimensions() {
   const [windowDimensions, setWindowDimensions] = useState({ width: defaultWidth, height: defaultHeight })
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     function handleResize() {
       setWindowDimensions(getWindowDimensions())
     }
