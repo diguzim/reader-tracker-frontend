@@ -24,14 +24,14 @@ const StyledDesktopNavigationMenu = styled.nav`
 
 export function NavigationMenu(props: NavigationMenuProps) {
   const { children } = props
-  const { width } = useWindowDimensions()
+  const { small } = useWindowDimensions()
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
 
   function toggleMobileMenuVisibility() {
     setMobileMenuVisible(previousVisibility => !previousVisibility);
   }
   
-  if (width < 720) {
+  if (small) {
     return (
       <>
         <button onClick={toggleMobileMenuVisibility}>Activate</button>
