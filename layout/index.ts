@@ -1,1 +1,5 @@
 export * from './MainNavigation'
+export * from './AccountMenu'
+export * from './Footer'
+export * from './MainWrapper'
+export * from './MainCenteredContent'

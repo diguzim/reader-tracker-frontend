@@ -6,19 +6,20 @@ export interface NavigationMenuProps {
   children?: ReactNode
 }
 
-const StyledMobileNavigationMenu = styled.nav`
+const NavigationMenuCommon = styled.nav`
   display: flex;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+`
+
+const MobileNavigationMenu = styled(NavigationMenuCommon)`
   flex-direction: column;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   width: 100px;
 `
 
-const StyledDesktopNavigationMenu = styled.nav`
-  display: flex;
+const DesktopNavigationMenu = styled(NavigationMenuCommon)`
   flex-direction: row;
   padding: 10px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   align-items: center;
   justify-content: flex-start;
 `
@@ -36,10 +37,10 @@ export function NavigationMenu(props: NavigationMenuProps) {
     return (
       <>
         <button onClick={toggleMobileMenuVisibility}>Activate</button>
-        {mobileMenuVisible && <StyledMobileNavigationMenu>{children}</StyledMobileNavigationMenu>}
+        {mobileMenuVisible && <MobileNavigationMenu>{children}</MobileNavigationMenu>}
       </>
     )
   }
 
-  return <StyledDesktopNavigationMenu>{children}</StyledDesktopNavigationMenu>
+  return <DesktopNavigationMenu>{children}</DesktopNavigationMenu>
 }

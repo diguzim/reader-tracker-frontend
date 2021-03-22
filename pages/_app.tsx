@@ -1,14 +1,17 @@
 import type { AppProps } from 'next/app'
 
-import { MainNavigation } from 'layout'
+import { MainNavigation, MainWrapper, Footer, MainCenteredContent } from 'layout'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <MainNavigation />
-      <Component {...pageProps} />
-    </>
+    <MainWrapper>
+      <MainCenteredContent>
+        <MainNavigation />
+        <Component {...pageProps} />
+      </MainCenteredContent>
+      <Footer />
+    </MainWrapper>
   )
 }
 

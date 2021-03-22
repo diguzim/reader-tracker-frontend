@@ -1,6 +1,5 @@
-import Link from 'next/link'
-
-import { NavigationAnchor, NavigationLink, NavigationMenu } from 'components'
+import { NavigationLink, NavigationMenu } from 'components'
+import { AccountMenu } from 'layout'
 
 export function MainNavigation() {
   return (
@@ -14,6 +13,7 @@ export function MainNavigation() {
       <NavigationLink href="/readings">
         Leituras
       </NavigationLink>
+      <AccountMenu />
     </NavigationMenu>
   )
 }

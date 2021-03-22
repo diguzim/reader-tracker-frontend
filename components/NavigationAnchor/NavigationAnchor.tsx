@@ -1,9 +1,6 @@
 import styled from 'styled-components'
-import Link from 'next/link'
 
 import { smallBreakpoint } from "common";
-
-console.log('smallBreakpoint', smallBreakpoint);
 
 export interface NavigationAnchorProps {
   isCurrentPage?: boolean;
