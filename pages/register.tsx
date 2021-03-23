@@ -1,24 +1,31 @@
 import {
   ChangeEvent,
-  ChangeEventHandler,
   FormEvent,
-  FormEventHandler,
   useState,
 } from 'react'
 import styled from 'styled-components'
 
-interface FormTarget {
-  email: string
-  password: string
-}
+const Background = styled.div`
+  height: 100%;
+  background-image: url('/library_01.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+`
 
 const Form = styled.form<any>`
-  display: flex;
+  display: none;
   flex-direction: column;
 `
 
+const Title = styled.h1`
+  color: #333333;
+  margin-top: 0;
+`
+
 function Register() {
-  const [email, setEmail] = useState('')
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('')
 
   function handleOnChangeEmail(event: ChangeEvent<HTMLInputElement>) {
@@ -48,8 +55,8 @@ function Register() {
   }
 
   return (
-    <div>
-      <h1>Register</h1>
+    <Background>
+      <Title>Cadastre-se</Title>
       <Form onSubmit={registerUser}>
         <label htmlFor="email">Email</label>
         <input
@@ -71,7 +78,7 @@ function Register() {
 
         <button type="submit">Register</button>
       </Form>
-    </div>
+    </Background>
   )
 }
 

@@ -4,6 +4,6 @@ export const MainWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: rgba(255, 179, 102, 0.1);
+  background-color: #fcfcfc;
   height: 100vh;
 `

@@ -4,6 +4,7 @@ import { smallBreakpoint, mediumBreakpoint, bigBreakpoint } from 'common'
 
 export const MainCenteredContent = styled.div`
   width: 100%;
+  height: 100%;
 
   @media only screen and (min-width: ${smallBreakpoint}px) {
     width: 80%;
