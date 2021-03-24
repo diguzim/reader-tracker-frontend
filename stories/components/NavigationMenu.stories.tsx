@@ -4,10 +4,10 @@ import { Story, Meta } from '@storybook/react/types-6-0'
 import {
   NavigationMenu,
   NavigationMenuProps,
-} from '../components/NavigationMenu'
+} from 'components/NavigationMenu'
 
 export default {
-  title: 'Example/NavigationMenu',
+  title: 'Components/NavigationMenu',
   component: NavigationMenu,
 } as Meta
 import styled from 'styled-components'

@@ -1,5 +1,5 @@
 import { NavigationLink, NavigationMenu } from 'components'
-import { AccountMenu } from 'layout'
+import { AccountMenu } from 'layouts'
 
 export function MainNavigation() {
   return (

@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app'
 
-import { MainNavigation, MainWrapper, Footer, MainCenteredContent } from 'layout'
-import '../styles/globals.css'
+import { MainNavigation, MainWrapper, Footer, MainCenteredContent } from 'layouts'
+import 'styles/globals.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
