@@ -5,7 +5,7 @@ export function MainNavigation() {
   return (
     <NavigationMenu>
       <NavigationLink href="/">
-        Inicio
+        Início
       </NavigationLink>
       <NavigationLink href="/books">
         Livros
