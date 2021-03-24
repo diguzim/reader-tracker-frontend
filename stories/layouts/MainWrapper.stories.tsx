@@ -1,14 +1,14 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react/types-6-0'
 
-import { Footer } from 'layouts'
+import { MainWrapper } from 'layouts'
 
 export default {
-  title: 'Layouts/Footer',
-  component: Footer
+  title: 'Layouts/MainWrapper',
+  component: MainWrapper
 } as Meta
 
-const Template: Story = (args) => <Footer {...args} />
+const Template: Story = (args) => <MainWrapper {...args} />
 
 export const Example = Template.bind({})
 Example.args = {}
