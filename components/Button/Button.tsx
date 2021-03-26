@@ -12,7 +12,6 @@ interface StyledButtonProps {
 export interface ButtonProps extends Partial<StyledButtonProps> {
   primary?: boolean
   size?: 'small' | 'medium' | 'large'
-  label: string
 }
 
 const StyledButton = styled.button<StyledButtonProps>((props) => ({
@@ -37,7 +36,7 @@ export const Button: React.FC<ButtonProps> = ({
   backgroundColor: incomingBackgroundColor,
   color: incomingColor,
   padding: incomingPadding,
-  label,
+  children,
   boxShadow: incomingBoxShadow,
   ...props
 }) => {
@@ -76,7 +75,7 @@ export const Button: React.FC<ButtonProps> = ({
       boxShadow={boxShadow}
       {...props}
     >
-      {label}
+      {children}
     </StyledButton>
   )
 }

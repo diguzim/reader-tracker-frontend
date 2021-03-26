@@ -1,3 +1,4 @@
+import { Button, PageLink, TextInput } from 'components'
 import {
   ChangeEvent,
   FormEvent,
@@ -5,23 +6,53 @@ import {
 } from 'react'
 import styled from 'styled-components'
 
+const TextInputSpaced = styled(TextInput)`
+  margin-bottom: 20px;
+`
+
 const Background = styled.div`
   height: 100%;
   background-image: url('/library_01.jpg');
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  text-align: center;
+`
+
+const Darker = styled.div`
+  background-color: rgba(0,0,0,0.5);
+  height: 100%;
+`
+
+const Wrapper = styled.div`
+  height: 100%;
+  padding-top: 50px;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
 `
 
 const Form = styled.form<any>`
-  display: none;
+  display: flex;
   flex-direction: column;
+  margin: auto;
+  width: 100%;
+  margin-bottom: 10px;
 `
 
 const Title = styled.h1`
-  color: #333333;
+  color: ${props => props.theme.colors.light_grey};
   margin-top: 0;
+  text-align: center;
+`
+
+const RegisteredLink = styled(PageLink)`
+  color: ${props => props.theme.colors.light_grey};
+  display: block;
+  text-align: center;
+`
+
+const RegisterButton = styled(Button)`
+  margin-top: 20px;
 `
 
 function Register() {
@@ -29,6 +60,7 @@ function Register() {
   const [password, setPassword] = useState('')
 
   function handleOnChangeEmail(event: ChangeEvent<HTMLInputElement>) {
+    console.log('event', event);
     setEmail(event.currentTarget.value)
   }
 
@@ -56,28 +88,17 @@ function Register() {
 
   return (
     <Background>
-      <Title>Cadastre-se</Title>
-      <Form onSubmit={registerUser}>
-        <label htmlFor="email">Email</label>
-        <input
-          id="email"
-          type="text"
-          autoComplete="email"
-          onChange={handleOnChangeEmail}
-          required
-        />
-
-        <label htmlFor="password">Password</label>
-        <input
-          id="password"
-          type="text"
-          autoComplete="password"
-          onChange={handleOnChangePassword}
-          required
-        />
-
-        <button type="submit">Register</button>
-      </Form>
+      <Darker>
+        <Wrapper>
+          <Title>Cadastre-se</Title>
+          <Form onSubmit={registerUser}>
+            <TextInputSpaced name="email" label="Email" autoComplete="email" onChange={handleOnChangeEmail} placeholder="Seu Email (obrigatório)" required />
+            <TextInputSpaced name="password" label="Senha" onChange={handleOnChangePassword} placeholder="Sua senha (obrigatório)" required />
+            <RegisterButton primary size={"large"}>Cadastrar</RegisterButton>
+          </Form>
+          <RegisteredLink href="/login">Já tem cadastro? Clique aqui.</RegisteredLink>
+        </Wrapper>
+      </Darker>
     </Background>
   )
 }

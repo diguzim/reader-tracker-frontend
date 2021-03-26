@@ -7,6 +7,9 @@ import 'styles/globals.css'
 const theme = {
   colors: {
     primary: '#0070f3',
+    grey: 'grey',
+    light_grey: '#E9E9E9',
+    blue: "blue",
   },
 }
 
