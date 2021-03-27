@@ -9,7 +9,7 @@ const Wrapper = styled.div`
 const Label = styled.label`
   font-weight: bold;
   margin-bottom: 10px;
-  color: ${props => props.theme.colors.light_grey};
+  color: ${props => props.theme.colors.black};
 `
 
 const Input = styled.input`

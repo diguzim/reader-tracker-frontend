@@ -8,6 +8,10 @@ import styled from 'styled-components'
 
 const TextInputSpaced = styled(TextInput)`
   margin-bottom: 20px;
+
+  & > label {
+    color: ${props => props.theme.colors.lightGrey};
+  }
 `
 
 const Background = styled.div`
@@ -40,13 +44,13 @@ const Form = styled.form<any>`
 `
 
 const Title = styled.h1`
-  color: ${props => props.theme.colors.light_grey};
+  color: ${props => props.theme.colors.lightGrey};
   margin-top: 0;
   text-align: center;
 `
 
 const RegisteredLink = styled(PageLink)`
-  color: ${props => props.theme.colors.light_grey};
+  color: ${props => props.theme.colors.lightGrey};
   display: block;
   text-align: center;
 `

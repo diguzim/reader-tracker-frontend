@@ -2,16 +2,8 @@ import type { AppProps } from 'next/app'
 import { ThemeProvider } from 'styled-components'
 
 import { MainNavigation, MainWrapper, Footer, MainCenteredContent } from 'layouts'
+import { theme } from 'styles'
 import 'styles/globals.css'
-
-const theme = {
-  colors: {
-    primary: '#0070f3',
-    grey: 'grey',
-    light_grey: '#E9E9E9',
-    blue: "blue",
-  },
-}
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
