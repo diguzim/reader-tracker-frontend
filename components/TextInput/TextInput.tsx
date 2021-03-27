@@ -23,8 +23,8 @@ const Input = styled.input`
 `
 
 export interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
-  name: string;
-  label: string;
+  label?: string;
+  name?: string;
 }
 
 export function TextInput(props: TextInputProps) {
@@ -32,8 +32,8 @@ export function TextInput(props: TextInputProps) {
   
   return (
     <Wrapper className={className}>
-      <Label htmlFor={name}>{label}</Label>
-      <Input id={name} {...rest} />
+      {label && <Label htmlFor={rest.id}>{label}</Label>}
+      <Input name={name} {...rest} />
     </Wrapper>
   )
 }
