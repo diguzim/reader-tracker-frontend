@@ -16,7 +16,7 @@ export function NavigationLink(props: NavigationLinkProps) {
 
   return (
     <Link href={href}>
-      <NavigationAnchor isCurrentPage={isCurrentPage}>{children}</NavigationAnchor>
+      <NavigationAnchor isCurrentPage={isCurrentPage} href={href}>{children}</NavigationAnchor>
     </Link>
   )
 }
