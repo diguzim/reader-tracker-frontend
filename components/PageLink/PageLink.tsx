@@ -17,7 +17,7 @@ export function PageLink(props: PageLinkProps) {
 
   return (
     <Link href={href}>
-      <PageAnchor className={className} isCurrentPage={isCurrentPage}>{children}</PageAnchor>
+      <PageAnchor href={href} className={className} isCurrentPage={isCurrentPage}>{children}</PageAnchor>
     </Link>
   )
 }
