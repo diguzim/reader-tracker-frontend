@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { useTheme } from 'styled-components'
 
 interface StyledButtonProps {
   backgroundColor: string
@@ -40,12 +40,14 @@ export const Button: React.FC<ButtonProps> = ({
   boxShadow: incomingBoxShadow,
   ...props
 }) => {
+  const { colors } = useTheme();
+
   const backgroundColor = incomingBackgroundColor
     ? incomingBackgroundColor
     : primary
-    ? '#1ea7fd'
+    ? colors.primary
     : 'transparent'
-  const color = incomingColor ? incomingColor : primary ? 'white' : '#333'
+  const color = incomingColor ? incomingColor : primary ? colors.white : colors.black
   const fontSize = incomingFontSize
     ? incomingFontSize
     : size === 'small'
