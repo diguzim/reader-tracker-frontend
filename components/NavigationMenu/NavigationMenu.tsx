@@ -8,12 +8,12 @@ export interface NavigationMenuProps {
 
 const NavigationMenuCommon = styled.nav`
   display: flex;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid ${props => props.theme.colors.black}10;
 `
 
 const MobileNavigationMenu = styled(NavigationMenuCommon)`
   flex-direction: column;
-  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: 1px solid ${props => props.theme.colors.black}10;
   width: 100px;
 `
 

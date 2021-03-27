@@ -15,8 +15,7 @@ const Label = styled.label`
 const Input = styled.input`
   padding: 10px;
   border-radius: 10px;
-  border: 1px solid black;
-  border-color: ${props => props.theme.colors.grey};
+  border: 1px solid ${props => props.theme.colors.grey};
 
   ::placeholder {
     color: ${props => props.theme.colors.grey};

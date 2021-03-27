@@ -8,12 +8,12 @@ export interface NavigationAnchorProps {
 
 export const NavigationAnchor = styled.a<NavigationAnchorProps>`
   padding: 5px;
-  border-bottom: ${props => props.isCurrentPage ? '1px solid black' : 'none'};
+  border-bottom: ${props => props.isCurrentPage ? `1px solid ${props.theme.colors.black}` : 'none'};
   height: 30px;
   
   @media only screen and (max-width: ${smallBreakpoint - 1}px) {
     &:not(:first-child) {
-      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      border-top: 1px solid ${props => props.theme.colors.black}10;
     }
   }
   
