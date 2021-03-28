@@ -1,6 +1,8 @@
 import { ReactNode, useState } from 'react'
-import useWindowDimensions from '../../hooks/useWindowDimensions'
 import styled from 'styled-components'
+import { AiOutlineMenu } from 'react-icons/ai'
+
+import useWindowDimensions from '../../hooks/useWindowDimensions'
 
 export interface NavigationMenuProps {
   children?: ReactNode
@@ -36,7 +38,7 @@ export function NavigationMenu(props: NavigationMenuProps) {
   if (small) {
     return (
       <>
-        <button onClick={toggleMobileMenuVisibility}>Activate</button>
+        <AiOutlineMenu role="button" aria-label="Activate" onClick={toggleMobileMenuVisibility} />
         {mobileMenuVisible && <MobileNavigationMenu>{children}</MobileNavigationMenu>}
       </>
     )
