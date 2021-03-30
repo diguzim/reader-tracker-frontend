@@ -1,8 +1,8 @@
 import { ReactNode } from 'react'
 
 import useWindowDimensions from 'hooks/useWindowDimensions'
-import { MobileNavigationMenu } from './MobileNavigationMenu'
-import { DesktopNavigationMenu } from './DesktopNavigationMenu'
+import { MobileMenu } from './MobileMenu'
+import { DesktopMenu } from './DesktopMenu'
 
 export interface NavigationMenuProps {
   children?: ReactNode
@@ -13,8 +13,8 @@ export function NavigationMenu(props: NavigationMenuProps) {
   const { small } = useWindowDimensions()
 
   if (small) {
-    return <MobileNavigationMenu>{children}</MobileNavigationMenu>
+    return <MobileMenu>{children}</MobileMenu>
   }
 
-  return <DesktopNavigationMenu>{children}</DesktopNavigationMenu>
+  return <DesktopMenu>{children}</DesktopMenu>
 }
