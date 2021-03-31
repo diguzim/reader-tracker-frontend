@@ -8,7 +8,7 @@ const Positioner = styled.div`
   }
 `
 
-export function AccountMenu() {
+export function AccountMenu () {
   return (
     <Positioner>
       <NavigationLink href="/register">Cadastre-se</NavigationLink>

@@ -3,15 +3,15 @@ import { Story, Meta } from '@storybook/react/types-6-0'
 
 import {
   NavigationAnchor,
-  NavigationAnchorProps,
+  NavigationAnchorProps
 } from 'components/NavigationAnchor'
 
 export default {
   title: 'Components/NavigationAnchor',
-  component: NavigationAnchor,
+  component: NavigationAnchor
 } as Meta
 
-const child = "Início"
+const child = 'Início'
 
 const Template: Story<NavigationAnchorProps> = (args) => (
   <NavigationAnchor {...args}>{child}</NavigationAnchor>

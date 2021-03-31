@@ -5,7 +5,7 @@ import { MainNavigation, MainWrapper, Footer, MainCenteredContent } from 'layout
 import { theme } from 'styles'
 import 'styles/globals.css'
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp ({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
       <MainWrapper>

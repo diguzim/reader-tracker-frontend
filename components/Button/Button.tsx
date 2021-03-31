@@ -26,7 +26,7 @@ const StyledButton = styled.button<StyledButtonProps>((props) => ({
   color: props.color,
   fontSize: props.fontSize,
   padding: props.padding,
-  boxShadow: props.boxShadow,
+  boxShadow: props.boxShadow
 }))
 
 export const Button: React.FC<ButtonProps> = ({
@@ -40,33 +40,25 @@ export const Button: React.FC<ButtonProps> = ({
   boxShadow: incomingBoxShadow,
   ...props
 }) => {
-  const { colors } = useTheme();
+  const { colors } = useTheme()
 
-  const backgroundColor = incomingBackgroundColor
-    ? incomingBackgroundColor
-    : primary
+  const backgroundColor = incomingBackgroundColor ?? (primary
     ? colors.primary
-    : 'transparent'
-  const color = incomingColor ? incomingColor : primary ? colors.white : colors.black
-  const fontSize = incomingFontSize
-    ? incomingFontSize
-    : size === 'small'
+    : 'transparent')
+  const color = incomingColor ?? (primary ? colors.white : colors.black)
+  const fontSize = incomingFontSize ?? (size === 'small'
     ? '12px'
     : size === 'medium'
-    ? '14px'
-    : '16px'
-  const padding = incomingPadding
-    ? incomingPadding
-    : size === 'small'
+      ? '14px'
+      : '16px')
+  const padding = incomingPadding ?? (size === 'small'
     ? '10px 16px'
     : size === 'medium'
-    ? '11px 20px'
-    : '12px 24px'
-  const boxShadow = incomingBoxShadow
-    ? incomingBoxShadow
-    : primary
+      ? '11px 20px'
+      : '12px 24px')
+  const boxShadow = incomingBoxShadow ?? (primary
     ? 'none'
-    : 'rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset'
+    : 'rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset')
   return (
     <StyledButton
       type="button"

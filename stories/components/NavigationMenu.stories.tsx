@@ -3,14 +3,14 @@ import { Story, Meta } from '@storybook/react/types-6-0'
 
 import {
   NavigationMenu,
-  NavigationMenuProps,
+  NavigationMenuProps
 } from 'components/NavigationMenu'
+import styled from 'styled-components'
 
 export default {
   title: 'Components/NavigationMenu',
-  component: NavigationMenu,
+  component: NavigationMenu
 } as Meta
-import styled from 'styled-components'
 
 const Link = styled.a`
   @media only screen and (min-width: 720px) {

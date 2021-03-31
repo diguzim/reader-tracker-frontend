@@ -6,6 +6,6 @@ const Wrapper = styled.div`
   margin-top: auto;
 `
 
-export function Footer() {
+export function Footer () {
   return <Wrapper><h1>Some Footer</h1></Wrapper>
 }

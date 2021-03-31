@@ -38,7 +38,7 @@ interface MenuProps {
   onCloseClick: () => void
 }
 
-export function Menu(props: MenuProps) {
+export function Menu (props: MenuProps) {
   const { children, visible, onCloseClick } = props
   const { colors } = useTheme()
 

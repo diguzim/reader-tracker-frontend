@@ -1,10 +1,10 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react/types-6-0'
-import { withNextRouter } from 'storybook-addon-next-router';
+import { withNextRouter } from 'storybook-addon-next-router'
 
 import {
   NavigationLink,
-  NavigationLinkProps,
+  NavigationLinkProps
 } from 'components/NavigationLink'
 
 export default {
@@ -13,7 +13,7 @@ export default {
   decorators: [withNextRouter]
 } as Meta
 
-const child = "Início"
+const child = 'Início'
 
 const Template: Story<NavigationLinkProps> = (args) => (
   <NavigationLink {...args}>{child}</NavigationLink>

@@ -1,28 +1,28 @@
 import { useState, useEffect } from 'react'
 
-import { smallBreakpoint, mediumBreakpoint, bigBreakpoint } from "common";
+import { smallBreakpoint, mediumBreakpoint, bigBreakpoint } from 'common'
 
 let defaultHeight: number = 0
 let defaultWidth: number = 0
 
-if (typeof window !== `undefined`) {
+if (typeof window !== 'undefined') {
   defaultHeight = window.innerHeight
   defaultWidth = window.innerWidth
 }
 
-function getWindowDimensions() {
+function getWindowDimensions () {
   const { innerWidth: width, innerHeight: height } = window
   return {
     width,
-    height,
+    height
   }
 }
 
-export default function useWindowDimensions() {
+export default function useWindowDimensions () {
   const [windowDimensions, setWindowDimensions] = useState({ width: defaultWidth, height: defaultHeight })
 
   useEffect(() => {
-    function handleResize() {
+    function handleResize () {
       setWindowDimensions(getWindowDimensions())
     }
 
@@ -34,6 +34,6 @@ export default function useWindowDimensions() {
     ...windowDimensions,
     small: windowDimensions.width < smallBreakpoint,
     medium: windowDimensions.width >= smallBreakpoint && windowDimensions.width < mediumBreakpoint,
-    big: windowDimensions.width >= mediumBreakpoint && windowDimensions.width < bigBreakpoint,
+    big: windowDimensions.width >= mediumBreakpoint && windowDimensions.width < bigBreakpoint
   }
 }

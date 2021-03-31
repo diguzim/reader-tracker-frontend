@@ -1,10 +1,10 @@
 import { Book } from '@types'
 
-interface Books {
+interface BooksInterface {
   books: Book[]
 }
 
-function Books({ books }: Books) {
+function Books ({ books }: BooksInterface) {
   return (
     <ul>
       {books.map((book) => (
@@ -14,19 +14,19 @@ function Books({ books }: Books) {
   )
 }
 
-export async function getStaticProps() {
+export async function getStaticProps () {
   const res = await fetch('http://localhost:4000/api/v1/books', {
     method: 'GET',
     headers: {
-      'Content-Type': 'application/json',
-    },
+      'Content-Type': 'application/json'
+    }
   })
   const books = await res.json()
 
   return {
     props: {
-      books,
-    },
+      books
+    }
   }
 }
 

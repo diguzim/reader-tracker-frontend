@@ -12,7 +12,7 @@ const Template: Story<TextInputProps> = (args) => <TextInput {...args} />
 
 export const Example = Template.bind({})
 Example.args = {
-  name: "login",
-  label: "Login",
-  placeholder: "Entre seu login"
+  name: 'login',
+  label: 'Login',
+  placeholder: 'Entre seu login'
 }

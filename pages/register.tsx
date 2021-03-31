@@ -2,7 +2,7 @@ import { Button, PageLink, TextInput } from 'components'
 import {
   ChangeEvent,
   FormEvent,
-  useState,
+  useState
 } from 'react'
 import styled from 'styled-components'
 
@@ -59,33 +59,33 @@ const RegisterButton = styled(Button)`
   margin-top: 20px;
 `
 
-function Register() {
-  const [email, setEmail] = useState('');
+function Register () {
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  function handleOnChangeEmail(event: ChangeEvent<HTMLInputElement>) {
-    console.log('event', event);
+  function handleOnChangeEmail (event: ChangeEvent<HTMLInputElement>) {
+    console.log('event', event)
     setEmail(event.currentTarget.value)
   }
 
-  function handleOnChangePassword(event: ChangeEvent<HTMLInputElement>) {
+  function handleOnChangePassword (event: ChangeEvent<HTMLInputElement>) {
     setPassword(event.currentTarget.value)
   }
 
-  async function registerUser(event: FormEvent<HTMLFormElement>) {
+  async function registerUser (event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
     const res = await fetch('http://localhost:4000/users', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         user: {
           email,
-          password,
-        },
-      }),
+          password
+        }
+      })
     })
     await res.json()
   }
@@ -98,7 +98,7 @@ function Register() {
           <Form onSubmit={registerUser}>
             <TextInputSpaced name="email" label="Email" autoComplete="email" onChange={handleOnChangeEmail} placeholder="Seu Email (obrigatório)" required />
             <TextInputSpaced name="password" label="Senha" onChange={handleOnChangePassword} placeholder="Sua senha (obrigatório)" required />
-            <RegisterButton primary size={"large"}>Cadastrar</RegisterButton>
+            <RegisterButton primary size={'large'}>Cadastrar</RegisterButton>
           </Form>
           <RegisteredLink href="/login">Já tem cadastro? Clique aqui.</RegisteredLink>
         </Wrapper>

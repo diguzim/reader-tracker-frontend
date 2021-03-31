@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
-import { smallBreakpoint } from "common";
+import { smallBreakpoint } from 'common'
 
 export interface NavigationAnchorProps {
-  isCurrentPage?: boolean;
+  isCurrentPage?: boolean
 }
 
 export const NavigationAnchor = styled.a<NavigationAnchorProps>`

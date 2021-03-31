@@ -1,4 +1,4 @@
-import { InputHTMLAttributes } from "react";
+import { InputHTMLAttributes } from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
@@ -23,13 +23,13 @@ const Input = styled.input`
 `
 
 export interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
-  label?: string;
-  name?: string;
+  label?: string
+  name?: string
 }
 
-export function TextInput(props: TextInputProps) {
-  const { name, label, className, ...rest } = props;
-  
+export function TextInput (props: TextInputProps) {
+  const { name, label, className, ...rest } = props
+
   return (
     <Wrapper className={className}>
       {label && <Label htmlFor={rest.id}>{label}</Label>}

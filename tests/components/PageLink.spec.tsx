@@ -1,10 +1,10 @@
 import { render, screen } from 'tests/test-utils'
 import { PageLink } from 'components'
 
-const useRouter = jest.spyOn(require('next/router'), 'useRouter');
+const useRouter = jest.spyOn(require('next/router'), 'useRouter')
 useRouter.mockImplementation(() => ({
-  pathname: '/',
-}));
+  pathname: '/'
+}))
 
 const anchorText = 'Some Anchor Text'
 

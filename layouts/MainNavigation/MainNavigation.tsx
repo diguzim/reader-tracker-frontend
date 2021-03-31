@@ -1,7 +1,7 @@
 import { NavigationLink, NavigationMenu } from 'components'
 import { AccountMenu } from 'layouts'
 
-export function MainNavigation() {
+export function MainNavigation () {
   return (
     <NavigationMenu>
       <NavigationLink href="/">

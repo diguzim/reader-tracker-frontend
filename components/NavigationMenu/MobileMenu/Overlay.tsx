@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 interface OverlayProps {
-  mobileMenuVisible: boolean;
+  mobileMenuVisible: boolean
 }
 
 export const Overlay = styled.div<OverlayProps>`

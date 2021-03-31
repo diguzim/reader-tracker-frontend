@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export interface PageAnchorProps {
-  isCurrentPage?: boolean;
+  isCurrentPage?: boolean
 }
 
 export const PageAnchor = styled.a<PageAnchorProps>`

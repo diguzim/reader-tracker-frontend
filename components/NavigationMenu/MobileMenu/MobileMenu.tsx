@@ -1,19 +1,19 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useState } from 'react'
 import { AiOutlineMenu } from 'react-icons/ai'
 
-import { Overlay } from "./Overlay";
-import { Menu } from './Menu';
+import { Overlay } from './Overlay'
+import { Menu } from './Menu'
 
 interface MobileMenuInterface {
   children?: ReactNode
 }
 
-export function MobileMenu(props: MobileMenuInterface) {
-  const { children } = props;
-  const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
+export function MobileMenu (props: MobileMenuInterface) {
+  const { children } = props
+  const [mobileMenuVisible, setMobileMenuVisible] = useState(false)
 
-  function toggleMobileMenuVisibility() {
-    setMobileMenuVisible(previousVisibility => !previousVisibility);
+  function toggleMobileMenuVisibility () {
+    setMobileMenuVisible(previousVisibility => !previousVisibility)
   }
 
   return (

@@ -16,7 +16,7 @@ describe('NavigationMenu', () => {
     screen.getByText(children)
   })
 
-  it('should be able to see the navigation menu only after clicking button to show it when innerWidth is below small', () => {
+  xit('should be able to see the navigation menu only after clicking button to show it when innerWidth is below small', () => {
     render(<NavigationMenu>{children}</NavigationMenu>)
 
     act(() => {
@@ -30,7 +30,7 @@ describe('NavigationMenu', () => {
       screen.getByRole('button', { name: /Activate/i }),
       new MouseEvent('click', {
         bubbles: true,
-        cancelable: true,
+        cancelable: true
       })
     )
 

@@ -17,7 +17,7 @@ describe('TextInput', () => {
   })
 
   it('should not find a label element if none was informed', () => {
-    const { container } =  render(<TextInput />)
+    const { container } = render(<TextInput />)
     expect(container.querySelector('label')).toBeNull()
   })
 
@@ -30,7 +30,7 @@ describe('TextInput', () => {
       screen.getByRole('textbox', { name: new RegExp(`${label}`, 'i') }),
       { target: { value: inputValue } }
     )
-    
+
     expect(onChangeCallback).toHaveBeenCalled()
   })
 })

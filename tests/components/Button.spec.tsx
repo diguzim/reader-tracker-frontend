@@ -12,7 +12,7 @@ describe('Button', () => {
       screen.getByText(ButtonText),
       new MouseEvent('click', {
         bubbles: true,
-        cancelable: true,
+        cancelable: true
       })
     )
     expect(onClickCallback).toHaveBeenCalled()

@@ -8,7 +8,7 @@ export interface NavigationMenuProps {
   children?: ReactNode
 }
 
-export function NavigationMenu(props: NavigationMenuProps) {
+export function NavigationMenu (props: NavigationMenuProps) {
   const { children } = props
   const { small } = useWindowDimensions()
 
