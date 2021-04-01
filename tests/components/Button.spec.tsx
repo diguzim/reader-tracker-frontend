@@ -1,15 +1,16 @@
 import { render, screen, fireEvent } from 'tests/test-utils'
-import { Button } from 'components/Button'
+import { Button } from 'components'
 
 describe('Button', () => {
   it('Should render the Button and be able to click on it', () => {
-    const ButtonText = 'Click here'
+    const buttonText = 'Click here'
     const onClickCallback = jest.fn()
 
-    render(<Button onClick={onClickCallback}>{ButtonText}</Button>)
-    screen.getByText(ButtonText)
+    render(<Button onClick={onClickCallback}>{buttonText}</Button>)
+    
+    screen.getByText(buttonText)
     fireEvent(
-      screen.getByText(ButtonText),
+      screen.getByText(buttonText),
       new MouseEvent('click', {
         bubbles: true,
         cancelable: true
@@ -17,6 +18,6 @@ describe('Button', () => {
     )
     expect(onClickCallback).toHaveBeenCalled()
 
-    screen.getByRole('button', { name: new RegExp(`${ButtonText}`, 'i') })
+    screen.getByRole('button', { name: new RegExp(`${buttonText}`, 'i') })
   })
 })
