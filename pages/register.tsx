@@ -1,4 +1,5 @@
 import { Button, PageLink, TextInput } from 'components'
+import { useRouter } from 'next/dist/client/router'
 import {
   ChangeEvent,
   FormEvent,
@@ -62,9 +63,9 @@ const RegisterButton = styled(Button)`
 function Register () {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const router = useRouter()
 
   function handleOnChangeEmail (event: ChangeEvent<HTMLInputElement>) {
-    console.log('event', event)
     setEmail(event.currentTarget.value)
   }
 
@@ -87,7 +88,13 @@ function Register () {
         }
       })
     })
-    await res.json()
+
+    if (res.ok) {
+      return await router.push('/')
+    }
+
+    // TODO add proper error handling
+    alert('Something failed in this request')
   }
 
   return (
@@ -97,8 +104,8 @@ function Register () {
           <Title>Cadastre-se</Title>
           <Form onSubmit={registerUser}>
             <TextInputSpaced name="email" label="Email" autoComplete="email" onChange={handleOnChangeEmail} placeholder="Seu Email (obrigatório)" required />
-            <TextInputSpaced name="password" label="Senha" onChange={handleOnChangePassword} placeholder="Sua senha (obrigatório)" required />
-            <RegisterButton primary size={'large'}>Cadastrar</RegisterButton>
+            <TextInputSpaced name="password" label="Senha" onChange={handleOnChangePassword} placeholder="Sua senha (obrigatório)" type="password" required />
+            <RegisterButton primary size={'large'} type="submit">Cadastrar</RegisterButton>
           </Form>
           <RegisteredLink href="/login">Já tem cadastro? Clique aqui.</RegisteredLink>
         </Wrapper>
