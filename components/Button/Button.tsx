@@ -1,3 +1,4 @@
+import { ButtonHTMLAttributes } from 'react'
 import styled, { useTheme } from 'styled-components'
 
 interface StyledButtonProps {
@@ -6,10 +7,9 @@ interface StyledButtonProps {
   fontSize: string
   padding: string
   boxShadow: string
-  onClick?: () => void
 }
 
-export interface ButtonProps extends Partial<StyledButtonProps> {
+export interface ButtonProps extends Partial<StyledButtonProps>, ButtonHTMLAttributes<HTMLButtonElement> {
   primary?: boolean
   size?: 'small' | 'medium' | 'large'
 }
