@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 interface CloseIconProps {
   onClick?: () => void
+  color: string
 }
 
 const IconPositioner = styled.div`
@@ -10,7 +11,7 @@ const IconPositioner = styled.div`
 `
 
 export const CloseIcon: React.FC<CloseIconProps> = (props) => {
-  const { onClick } = props
+  const { onClick, color } = props
 
   return (
     <IconPositioner>
@@ -19,6 +20,7 @@ export const CloseIcon: React.FC<CloseIconProps> = (props) => {
         onClick={onClick}
         role="button"
         aria-label="Close Banner"
+        color={color}
       />
     </IconPositioner>
   )

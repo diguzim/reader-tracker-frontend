@@ -1,4 +1,4 @@
-import { Button, PageLink, TextInput } from 'components'
+import { Banner, BannerTypes, Button, PageLink, TextInput } from 'components'
 import { useRouter } from 'next/dist/client/router'
 import {
   ChangeEvent,
@@ -63,6 +63,8 @@ const RegisterButton = styled(Button)`
 function Register () {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [hasError, setHasError] = useState(false)
+
   const router = useRouter()
 
   function handleOnChangeEmail (event: ChangeEvent<HTMLInputElement>) {
@@ -71,6 +73,10 @@ function Register () {
 
   function handleOnChangePassword (event: ChangeEvent<HTMLInputElement>) {
     setPassword(event.currentTarget.value)
+  }
+
+  function dismissError () {
+    setHasError(false)
   }
 
   async function registerUser (event: FormEvent<HTMLFormElement>) {
@@ -94,11 +100,14 @@ function Register () {
     }
 
     // TODO add proper error handling
-    alert('Something failed in this request')
+    // alert('Something failed in this request')
+
+    setHasError(true)
   }
 
   return (
     <Background>
+      {hasError && <Banner type={BannerTypes.Error} onClose={dismissError}>Algum erro</Banner>}
       <Darker>
         <Wrapper>
           <Title>Cadastre-se</Title>

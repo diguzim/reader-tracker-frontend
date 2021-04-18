@@ -8,6 +8,8 @@ export const theme: DefaultTheme = {
     lightGrey: '#E9E9E9',
     white: 'white',
     red: 'red',
-    yellow: 'yellow'
+    yellow: 'yellow',
+    blue: 'blue',
+    green: 'green'
   }
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react/types-6-0'
 
-import { Banner, BannerProps } from 'components'
+import { Banner, BannerProps, BannerTypes } from 'components'
 
 const bigLoremText = `Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.
 
@@ -30,4 +30,27 @@ Dismissable.args = {
 export const Undismissable = Template.bind({})
 Undismissable.args = { 
   dismissable: false
+}
+
+export const Neutral = Template.bind({})
+Neutral.args = {}
+
+export const Error = Template.bind({})
+Error.args = {
+  type: BannerTypes.Error
+}
+
+export const Caution = Template.bind({})
+Caution.args = {
+  type: BannerTypes.Caution
+}
+
+export const Info = Template.bind({})
+Info.args = {
+  type: BannerTypes.Info
+}
+
+export const Success = Template.bind({})
+Success.args = {
+  type: BannerTypes.Success
 }

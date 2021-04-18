@@ -1,8 +1,8 @@
-import { BiErrorCircle } from 'react-icons/bi'
 import styled from 'styled-components'
+import { BannerTypes, typesStyles } from './types'
 
 interface TypeIconProps {
-  type: string
+  type: BannerTypes
 }
 
 const IconPositioner = styled.div`
@@ -10,9 +10,13 @@ const IconPositioner = styled.div`
 `
 
 export const TypeIcon: React.FC<TypeIconProps> = (props) => {
+  const { type } = props
+
+  const { color, icon: Icon } = typesStyles[type]
+
   return (
     <IconPositioner>
-      <BiErrorCircle size={30} />
+      <Icon size={30} color={color} />
     </IconPositioner>
   )
 }
