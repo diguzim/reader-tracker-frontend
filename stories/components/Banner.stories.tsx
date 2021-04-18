@@ -3,6 +3,10 @@ import { Story, Meta } from '@storybook/react/types-6-0'
 
 import { Banner, BannerProps } from 'components'
 
+const bigLoremText = `Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.
+
+Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini. `
+
 export default {
   title: 'Components/Banner',
   component: Banner,
@@ -11,7 +15,19 @@ export default {
   }
 } as Meta
 
-const Template: Story<BannerProps> = (args) => <Banner {...args}>Texto</Banner>
+const onCloseClick = () => {
+  alert('Go Go Closing!')
+}
 
-export const Example = Template.bind({})
-Example.args = { }
+const Template: Story<BannerProps> = (args) => <Banner {...args}>{bigLoremText}</Banner>
+
+export const Dismissable = Template.bind({})
+Dismissable.args = { 
+  dismissable: true,
+  onClose: onCloseClick
+}
+
+export const Undismissable = Template.bind({})
+Undismissable.args = { 
+  dismissable: false
+}
