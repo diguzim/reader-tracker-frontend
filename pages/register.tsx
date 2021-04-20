@@ -1,3 +1,4 @@
+import { errorMessagesBuilder } from 'common'
 import { Banner, BannerTypes, Button, PageLink, TextInput } from 'components'
 import { useRouter } from 'next/dist/client/router'
 import {
@@ -99,8 +100,9 @@ function Register () {
       return await router.push('/')
     }
 
-    // TODO add proper error handling
-    // alert('Something failed in this request')
+    const { errors } = await res.json()
+    const errorMessages = errorMessagesBuilder(errors)
+    console.log('errorMessages', errorMessages)
 
     setHasError(true)
   }

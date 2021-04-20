@@ -4,7 +4,8 @@ const messages: Record<string, string> = {
   password: 'senha',
 
   // error messages from
-  'error.invalid_field': '{field} é inválido'
+  'error.invalid_field': 'Campo {field} inválido',
+  'error.already_in_use': 'Campo {field} já está em uso'
 }
 
 function fillProperties (translatedMessage: string, params: Record<string, string>): string {
@@ -19,8 +20,8 @@ function fillProperties (translatedMessage: string, params: Record<string, strin
   return message
 }
 
-export const useTranslatedMessage = (message: string, params: Record<string, string> = {}) => {
-  const translatedMessage = messages[message]
+export const translateMessage = (message: string, params: Record<string, string> = {}) => {
+  const translatedMessage = messages[message] || message
 
   const filledMessage = fillProperties(translatedMessage, params)
 
