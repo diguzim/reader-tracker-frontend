@@ -5,7 +5,8 @@ const messages: Record<string, string> = {
 
   // error messages from
   'error.invalid_field': 'Campo {field} inválido',
-  'error.already_in_use': 'Campo {field} já está em uso'
+  'error.already_in_use': 'Campo {field} já está em uso',
+  'error.minimum_characters': 'Campo {field} muito curto (mínimo de {size} caracteres)'
 }
 
 function fillProperties (translatedMessage: string, params: Record<string, string>): string {
