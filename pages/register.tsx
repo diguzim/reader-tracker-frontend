@@ -1,9 +1,10 @@
 import { errorMessagesBuilder } from 'common'
-import { Banner, BannerTypes, Button, PageLink, TextInput } from 'components'
+import { Banner, BannerTypes, BulletList, Button, PageLink, TextInput } from 'components'
 import { useRouter } from 'next/dist/client/router'
 import {
   ChangeEvent,
   FormEvent,
+  ReactNode,
   useState
 } from 'react'
 import styled from 'styled-components'
@@ -64,7 +65,7 @@ const RegisterButton = styled(Button)`
 function Register () {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [hasError, setHasError] = useState(false)
+  const [errors, setErrors] = useState([] as ReactNode[])
 
   const router = useRouter()
 
@@ -77,7 +78,7 @@ function Register () {
   }
 
   function dismissError () {
-    setHasError(false)
+    setErrors([])
   }
 
   async function registerUser (event: FormEvent<HTMLFormElement>) {
@@ -101,15 +102,15 @@ function Register () {
     }
 
     const { errors } = await res.json()
+    console.log('errors', errors)
     const errorMessages = errorMessagesBuilder(errors)
-    console.log('errorMessages', errorMessages)
 
-    setHasError(true)
+    setErrors(errorMessages)
   }
 
   return (
     <Background>
-      {hasError && <Banner type={BannerTypes.Error} onClose={dismissError}>Algum erro</Banner>}
+      {errors && <Banner type={BannerTypes.Error} onClose={dismissError}><BulletList list={errors}></BulletList></Banner>}
       <Darker>
         <Wrapper>
           <Title>Cadastre-se</Title>
