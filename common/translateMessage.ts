@@ -4,6 +4,7 @@ const messages: Record<string, string> = {
   password: 'senha',
 
   // error messages from
+  'error.page_not_found.title': 'Página não encontrada',
   'error.invalid_field': 'Campo {field} inválido',
   'error.already_in_use': 'Campo {field} já está em uso',
   'error.minimum_characters': 'Campo {field} muito curto (mínimo de {size} caracteres)'
