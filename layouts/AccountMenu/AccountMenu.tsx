@@ -11,7 +11,8 @@ const Positioner = styled.div`
 export function AccountMenu () {
   return (
     <Positioner>
-      <NavigationLink href="/register">Cadastre-se</NavigationLink>
+      <NavigationLink href="/login">Entrar</NavigationLink>
+      <NavigationLink href="/register">Criar nova conta</NavigationLink>
     </Positioner>
   )
 }

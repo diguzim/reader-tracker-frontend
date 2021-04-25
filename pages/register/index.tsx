@@ -98,11 +98,10 @@ function Register () {
     })
 
     if (res.ok) {
-      return await router.push('/')
+      return await router.push('/register/success')
     }
 
     const { errors } = await res.json()
-    console.log('errors', errors)
     const errorMessages = errorMessagesBuilder(errors)
 
     setErrors(errorMessages)
@@ -110,7 +109,7 @@ function Register () {
 
   return (
     <Background>
-      {errors && <Banner type={BannerTypes.Error} onClose={dismissError}><BulletList list={errors}></BulletList></Banner>}
+      {errors.length > 0 && <Banner type={BannerTypes.Error} onClose={dismissError}><BulletList list={errors}></BulletList></Banner>}
       <Darker>
         <Wrapper>
           <Title>Cadastre-se</Title>

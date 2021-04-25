@@ -9,4 +9,6 @@ export const PageAnchor = styled.a<PageAnchorProps>`
     text-decoration: underline;
     cursor: pointer;
   }
+
+  color: ${(props) => props.theme.colors.blue}
 `
