@@ -1,4 +1,4 @@
-import { errorMessagesBuilder } from 'common'
+import { errorMessagesBuilder, translateMessage } from 'common'
 import { Banner, BannerTypes, BulletList, Button, PageLink, TextInput } from 'components'
 import { useRouter } from 'next/dist/client/router'
 import {
@@ -81,10 +81,15 @@ function Login () {
     setErrors([])
   }
 
+  function displayError (error: string) {
+    const errorMessage = translateMessage(error)
+    setErrors([errorMessage])
+  }
+
   async function LoginUser (event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
-    const res = await fetch('http://localhost:4000/users', {
+    const res = await fetch('http://localhost:4000/users/sign_in', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -101,10 +106,8 @@ function Login () {
       return await router.push('/')
     }
 
-    const { errors } = await res.json()
-    const errorMessages = errorMessagesBuilder(errors)
-
-    setErrors(errorMessages)
+    const { error } = await res.json()
+    displayError(error)
   }
 
   return (

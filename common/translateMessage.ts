@@ -7,7 +7,10 @@ const messages: Record<string, string> = {
   'error.page_not_found.title': 'Página não encontrada',
   'error.invalid_field': 'Campo {field} inválido',
   'error.already_in_use': 'Campo {field} já está em uso',
-  'error.minimum_characters': 'Campo {field} muito curto (mínimo de {size} caracteres)'
+  'error.minimum_characters': 'Campo {field} muito curto (mínimo de {size} caracteres)',
+
+  // Plain english error messages
+  'Invalid Email or password.': 'Email ou senha inválidos'
 }
 
 function fillProperties (translatedMessage: string, params: Record<string, string>): string {
